@@ -2,6 +2,8 @@ package br.naldo.webflux.service;
 
 import br.naldo.webflux.entity.CharacterEntity;
 import br.naldo.webflux.repository.CharacterRepository;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -9,19 +11,15 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @Slf4j
+@NoArgsConstructor
 @Service
 public class CharacterServiceImpl implements ICharacterService {
-//
-//    @Autowired
-//    private final CharacterRepository repository;
 
-//    @Autowired
-//    public CharacterServiceImpl(CharacterRepository repository) {
-//        this.repository = repository;
-//    }
+    private CharacterRepository repo;
 
     @Autowired
-    public CharacterServiceImpl() {
+    public CharacterServiceImpl(CharacterRepository repository) {
+        this.repo = repository;
     }
 
     @Override
@@ -60,11 +58,11 @@ public class CharacterServiceImpl implements ICharacterService {
                 String.format("You've reached updateCharacter(%s) @ CharacterServiceImpl.java Jack, but it is not supported yet.", characterEntity.toString()));
     }
 
-    @Override
-    public void killCharacter(String id) {
-        throw new UnsupportedOperationException(
-                String.format("You've reached killCharacter(%s) @ CharacterServiceImpl.java Jack, but it is not supported yet.", id));
-    }
+//    @Override
+//    public void killCharacter(String id) {
+//        throw new UnsupportedOperationException(
+//                String.format("You've reached killCharacter(%s) @ CharacterServiceImpl.java Jack, but it is not supported yet.", id));
+//    }
 
     @Override
     public boolean isAwake(String id) {

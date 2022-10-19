@@ -38,10 +38,10 @@ public class CharacterController {
         return service.updateCharacter(character);
     }
 
-    @DeleteMapping("/kill/{id}")
-    public void killCharacter(@PathVariable("id") String id){
-        service.killCharacter(id);
-    }
+//    @DeleteMapping("/kill/{id}")
+//    public void killCharacter(@PathVariable("id") String id){
+//        service.killCharacter(id);
+//    }
 
 }
 

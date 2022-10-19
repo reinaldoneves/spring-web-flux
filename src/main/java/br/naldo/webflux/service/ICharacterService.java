@@ -46,8 +46,8 @@ public interface ICharacterService {
      * Kill the character setting the isAlive to false
      * @param id
      */
-    @Deprecated(forRemoval = true)
-    void killCharacter(String id);
+//    @Deprecated(forRemoval = true)
+//    void killCharacter(String id);
 
     /***
      * Returns true if the character is awake
